@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :appointments
   resources :schedules
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  post 'schedules/:id/appointments', to: 'appointments#create'
+
 end

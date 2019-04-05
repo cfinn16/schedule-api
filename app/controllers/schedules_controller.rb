@@ -11,12 +11,19 @@ class SchedulesController < ApplicationController
 
   def show
     @schedule = Schedule.find_by(id: params[:id])
-    render json: @schedule
+    render json: @schedule, include: 'appointments'
   end
 
   def destroy
     @schedule = Schedule.find_by(id: params[:id])
     @schedule.delete
+  end
+
+  def remove_appointment
+    @schedule = Schedule.find_by(id: params[:id])
+    @appointment = @schedule.appointments.find_by(id: params[:appointment_id])
+    puts "Going to delete #{@appointment.name}"
+    @appointment.delete
   end
 
   private

@@ -1,24 +1,12 @@
-# README
+# Schedule API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+By Connor Finnegan
 
-Things you may want to cover:
+## Instructions
+  1. Clone locally using `git clone git@github.com:cfinn16/schedule-api.git`
+  2. Install dependencies using `bundle install`
+  3. Create and seed database using `rails db:create && rails db:migrate && rails db:seed`
+  4. Start server using `rails s`
+  5. Test desired routes using Curl
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  

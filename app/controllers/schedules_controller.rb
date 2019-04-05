@@ -5,7 +5,7 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    @schedule = Schedule.create(schedule_params)
+    @schedule = Schedule.create(name: params[:schedule][:name])
     render json: @schedule
   end
 
@@ -22,14 +22,7 @@ class SchedulesController < ApplicationController
   def remove_appointment
     @schedule = Schedule.find_by(id: params[:id])
     @appointment = @schedule.appointments.find_by(id: params[:appointment_id])
-    puts "Going to delete #{@appointment.name}"
     @appointment.delete
-  end
-
-  private
-
-  def schedule_params
-    params.require(:schedule).permit(:name)
   end
 
 end
